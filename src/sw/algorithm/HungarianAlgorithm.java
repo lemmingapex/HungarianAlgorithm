@@ -67,9 +67,9 @@ public class HungarianAlgorithm {
 	 *            same length.
 	 */
 	public HungarianAlgorithm(double[][] costMatrix) {
-		this.dim = Math.max(costMatrix.length, costMatrix[0].length);
+		this.dim = Math.max(costMatrix.length, costMatrix.length > 0 ? costMatrix[0].length : 0);
 		this.rows = costMatrix.length;
-		this.cols = costMatrix[0].length;
+		this.cols = costMatrix.length > 0 ? costMatrix[0].length : 0;
 		this.costMatrix = new double[this.dim][this.dim];
 		for (int w = 0; w < this.dim; w++) {
 			if (w < costMatrix.length) {
